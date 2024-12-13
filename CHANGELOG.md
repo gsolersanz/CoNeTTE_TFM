@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.2] 2024-12-13
+### Added
+- Add MIT LICENCE file.
+
+### Changed
+- Update README.md and CITATION.cff file.
+
 ## [0.3.1] 2024-06-10
 ### Fixed
 - Remove duplicated files in `results` folder.
