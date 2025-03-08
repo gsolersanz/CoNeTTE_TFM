@@ -8,3 +8,5 @@ logs/
 data/
 data_tmp*/
 .micromamba/
+audiocaps/
+
