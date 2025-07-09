@@ -8,3 +8,5 @@ logs/
 data/
 data_tmp*/
 .micromamba/
+/src/conette/pipeline/onnx_models_full/
+/src/conette/pipeline/conette_t5/
