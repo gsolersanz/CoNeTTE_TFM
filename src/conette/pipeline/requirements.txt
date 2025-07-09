@@ -1,0 +1,35 @@
+# CoNeTTE T5 ONNX Optimizado - Dependencias
+# ===========================================
+
+# Core dependencies
+torch>=2.0.0
+onnx>=1.14.0
+onnxruntime>=1.15.0
+
+# Audio processing
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# CoNeTTE original (for tokenizer extraction)
+git+https://github.com/Labbeti/conette.git
+
+# Optimization libraries
+numpy>=1.21.0
+transformers>=4.20.0
+
+# Optional: For GPU optimization (uncomment if needed)
+# onnxruntime-gpu>=1.15.0
+
+# Optional: For TensorRT on Jetson Nano (install separately)
+# onnxruntime-gpu (with TensorRT provider)
+
+# Development and testing
+pytest>=7.0.0
+tqdm>=4.64.0
+
+# Memory monitoring
+psutil>=5.9.0
+
+# Optional: For advanced optimizations
+# onnx-simplifier>=0.4.0
+# onnxoptimizer>=0.3.0

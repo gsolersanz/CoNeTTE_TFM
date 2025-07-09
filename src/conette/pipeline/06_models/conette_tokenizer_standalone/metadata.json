@@ -1,0 +1,18 @@
+{
+  "vocab_size": 19788,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "unk_token_id": 3,
+  "cls": "<class 'conette.tokenization.aac_tokenizer.AACTokenizer'>",
+  "has_decode_batch": true,
+  "has_decode_single": true,
+  "special_tokens": {
+    "<bos>": 1,
+    "<eos>": 2,
+    "<pad>": 0,
+    "<unk>": 3,
+    "<bos_clotho>": 19781,
+    "<bos_audiocaps>": 19782
+  }
+}

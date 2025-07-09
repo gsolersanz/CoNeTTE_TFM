@@ -1,0 +1,43 @@
+2025-06-23 15:50:22,399 - __main__ - INFO - \n================================================================================
+2025-06-23 15:50:22,400 - __main__ - INFO -  EXPORTACIÓN T5 MODELS CONETTE A ONNX - VERSIÓN FUNCIONAL 
+2025-06-23 15:50:22,400 - __main__ - INFO - ================================================================================\n
+2025-06-23 15:50:22,400 - __main__ - INFO - 🔧 Configurando modelos CoNeTTE...
+2025-06-23 15:50:24,360 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmp7pd0ko5a
+2025-06-23 15:50:24,360 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmp7pd0ko5a/_remote_module_non_scriptable.py
+2025-06-23 15:50:25,445 - conette.huggingface.config - WARNING - Unknown 4 keywords arguments for CoNeTTEConfig. (found ('architectures', 'torch_dtype', 'transformers_version', '_commit_hash'))
+2025-06-23 15:50:37,249 - __main__ - INFO - d_model inferido del embedding: 256
+2025-06-23 15:50:37,249 - __main__ - INFO - ExportCoNeTTE inicializado:
+2025-06-23 15:50:37,250 - __main__ - INFO -   - d_model: 256
+2025-06-23 15:50:37,250 - __main__ - INFO -   - vocab_size: 19788
+2025-06-23 15:50:37,250 - __main__ - INFO -   - BOS: 1, EOS: 2
+2025-06-23 15:50:37,251 - __main__ - INFO - ✅ Modelos configurados
+2025-06-23 15:50:37,251 - __main__ - INFO - Removiendo modelo existente: 06_models/t5_models/dec_no_cache/model.onnx
+2025-06-23 15:50:37,273 - __main__ - INFO - 📁 Carpetas preparadas
+2025-06-23 15:50:37,273 - __main__ - INFO - 🚀 INICIANDO EXPORTACIÓN T5 PARA CONETTE
+2025-06-23 15:50:37,274 - __main__ - INFO - ============================================================
+2025-06-23 15:50:37,274 - __main__ - INFO - 📦 Exportando modelo SIN cache...
+2025-06-23 15:50:37,671 - __main__ - INFO - Sample inputs preparados:
+2025-06-23 15:50:37,671 - __main__ - INFO -   input_ids: torch.Size([1, 1])
+2025-06-23 15:50:37,672 - __main__ - INFO -   encoder_features: torch.Size([1, 15, 256])
+2025-06-23 15:50:40,660 - __main__ - INFO - ✅ Modelo sin cache exportado: 06_models/t5_models/dec_no_cache/model.onnx
+2025-06-23 15:50:40,660 - __main__ - INFO - 🧪 Probando modelos exportados...
+2025-06-23 15:50:40,938 - __main__ - INFO - Sample inputs preparados:
+2025-06-23 15:50:40,939 - __main__ - INFO -   input_ids: torch.Size([1, 1])
+2025-06-23 15:50:40,940 - __main__ - INFO -   encoder_features: torch.Size([1, 15, 256])
+2025-06-23 15:50:40,955 - __main__ - INFO - PyTorch logits: torch.Size([1, 1, 19788])
+2025-06-23 15:50:41,305 - __main__ - INFO - ONNX logits: torch.Size([1, 1, 19788])
+2025-06-23 15:50:41,314 - __main__ - INFO - Diferencia máxima PyTorch vs ONNX: 0.000004
+2025-06-23 15:50:41,314 - __main__ - INFO - ✅ Modelos coinciden!
+2025-06-23 15:50:41,332 - __main__ - INFO - 🔗 Creando enlaces simbólicos para compatibilidad...
+2025-06-23 15:50:41,333 - __main__ - INFO - ✅ Enlace simbólico creado: conette_t5/dec_no_cache/model.onnx -> ../../06_models/t5_models/dec_no_cache/model.onnx
+2025-06-23 15:50:41,334 - __main__ - INFO - 🔍 Verificando modelo ONNX...
+2025-06-23 15:50:41,334 - __main__ - INFO - Verificando model.onnx...
+2025-06-23 15:50:42,325 - __main__ - INFO -   ✅ model.onnx verificado correctamente
+2025-06-23 15:50:42,325 - __main__ - INFO -   📊 Entradas: ['input_ids', 'encoder_hidden_states']
+2025-06-23 15:50:42,325 - __main__ - INFO -   📊 Salidas: ['logits']
+2025-06-23 15:50:42,339 - __main__ - INFO - \n=== RESULTADOS FINALES ===
+2025-06-23 15:50:42,340 - __main__ - INFO - ✅ EXPORTACIÓN T5 COMPLETADA EXITOSAMENTE
+2025-06-23 15:50:42,340 - __main__ - INFO - 📁 Modelo guardado en: 06_models/t5_models/dec_no_cache/model.onnx
+2025-06-23 15:50:42,341 - __main__ - INFO - 🔗 Enlace funcional en: conette_t5/dec_no_cache/model.onnx
+2025-06-23 15:50:42,341 - __main__ - INFO - \n🎉 PROCESO T5 COMPLETADO EXITOSAMENTE
+2025-06-23 15:50:42,341 - __main__ - INFO - El modelo T5 está listo para usar con sistemas de inferencia

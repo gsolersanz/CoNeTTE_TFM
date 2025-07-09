@@ -1,0 +1,53 @@
+2025-06-23 15:48:17,674 - __main__ - INFO - ================================================================================
+2025-06-23 15:48:17,674 - __main__ - INFO -  EXPORTACIÓN CORREGIDA DE DECODER ONNX - DEFINITIVO 
+2025-06-23 15:48:17,675 - __main__ - INFO - ================================================================================
+2025-06-23 15:48:17,675 - __main__ - INFO - Loading PyTorch model...
+2025-06-23 15:48:17,906 - conette.huggingface.config - WARNING - Unknown 4 keywords arguments for CoNeTTEConfig. (found ('architectures', 'torch_dtype', 'transformers_version', '_commit_hash'))
+2025-06-23 15:48:29,562 - __main__ - INFO - ✅ PyTorch model loaded successfully
+2025-06-23 15:48:29,563 - __main__ - INFO - Preparing sample inputs...
+2025-06-23 15:48:33,593 - __main__ - INFO - Preprocessor output shapes:
+2025-06-23 15:48:33,593 - __main__ - INFO -   audio: torch.Size([1, 15, 768])
+2025-06-23 15:48:33,594 - __main__ - INFO -   audio_shape: torch.Size([1, 2])
+2025-06-23 15:48:33,594 - __main__ - INFO - Encoder output shape: torch.Size([1, 15, 768])
+2025-06-23 15:48:33,596 - __main__ - INFO - After projection shape: torch.Size([1, 256, 15])
+2025-06-23 15:48:33,597 - __main__ - INFO - After transpose shape: torch.Size([1, 15, 256])
+2025-06-23 15:48:33,597 - __main__ - INFO - Using BOS token: 19781 ('<bos_clotho>')
+2025-06-23 15:48:33,597 - __main__ - INFO - Sample inputs prepared:
+2025-06-23 15:48:33,597 - __main__ - INFO -   input_ids: torch.Size([1, 1])
+2025-06-23 15:48:33,598 - __main__ - INFO -   encoder_hidden_states: torch.Size([1, 15, 256])
+2025-06-23 15:48:33,598 - __main__ - INFO - Exporting corrected decoder to ONNX...
+2025-06-23 15:48:33,598 - conette.fix_onnx_decoder - INFO - Decoder type: <class 'conette.nn.decoders.aac_tfmer.AACTransformerDecoder'>
+2025-06-23 15:48:33,599 - conette.fix_onnx_decoder - INFO - Decoder attributes: ['T_destination', '__annotations__', '__call__', '__class__', '__constants__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattr__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setstate__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_apply', '_backward_hooks', '_buffers', '_call_impl', '_forward_hooks', '_forward_pre_hooks', '_get_backward_hooks', '_get_name', '_is_full_backward_hook', '_is_hf_initialized', '_load_from_state_dict', '_load_state_dict_post_hooks', '_load_state_dict_pre_hooks', '_maybe_warn_non_full_backward_hook', '_modules', '_named_members', '_non_persistent_buffers_set', '_parameters', '_register_load_state_dict_pre_hook', '_register_state_dict_hook', '_replicate_for_data_parallel', '_save_to_state_dict', '_slow_forward', '_state_dict_hooks', '_version', 'add_module', 'apply', 'bfloat16', 'bos_id', 'buffers', 'children', 'classifier', 'cpu', 'cuda', 'double', 'dump_patches', 'emb_layer', 'eos_id', 'eval', 'extra_repr', 'float', 'forward', 'get_buffer', 'get_extra_state', 'get_parameter', 'get_submodule', 'half', 'ipu', 'layers', 'load_state_dict', 'modules', 'named_buffers', 'named_children', 'named_modules', 'named_parameters', 'norm', 'num_layers', 'pad_id', 'parameters', 'pos_encoding', 'register_backward_hook', 'register_buffer', 'register_forward_hook', 'register_forward_pre_hook', 'register_full_backward_hook', 'register_load_state_dict_post_hook', 'register_module', 'register_parameter', 'requires_grad_', 'set_extra_state', 'share_memory', 'state_dict', 'to', 'to_empty', 'train', 'training', 'type', 'vocab_size', 'xpu', 'zero_grad']
+2025-06-23 15:48:33,599 - conette.fix_onnx_decoder - WARNING - d_model not found in decoder, inferred from embedding: 256
+2025-06-23 15:48:33,599 - conette.fix_onnx_decoder - INFO - FixedONNXDecoderWrapper initialized:
+2025-06-23 15:48:33,599 - conette.fix_onnx_decoder - INFO -   - d_model: 256
+2025-06-23 15:48:33,600 - conette.fix_onnx_decoder - INFO -   - num_layers: 6
+2025-06-23 15:48:33,600 - conette.fix_onnx_decoder - INFO -   - vocab_size: 19788
+2025-06-23 15:48:33,606 - __main__ - INFO - Testing forward pass...
+2025-06-23 15:48:33,712 - __main__ - INFO - ✅ Forward pass successful - output shape: torch.Size([1, 1, 19788])
+2025-06-23 15:48:33,712 - __main__ - INFO - Exporting to 06_models/onnx_models/conette_decoder_corrected.onnx...
+2025-06-23 15:48:37,248 - __main__ - INFO - ✅ Decoder exported successfully to 06_models/onnx_models/conette_decoder_corrected.onnx
+2025-06-23 15:48:37,248 - __main__ - INFO - Verifying ONNX export...
+2025-06-23 15:48:39,417 - __main__ - INFO - ✅ ONNX model structure is valid
+2025-06-23 15:48:39,805 - __main__ - INFO - ✅ ONNX inference successful - output shape: (1, 1, 19788)
+2025-06-23 15:48:39,806 - conette.fix_onnx_decoder - INFO - Decoder type: <class 'conette.nn.decoders.aac_tfmer.AACTransformerDecoder'>
+2025-06-23 15:48:39,806 - conette.fix_onnx_decoder - INFO - Decoder attributes: ['T_destination', '__annotations__', '__call__', '__class__', '__constants__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattr__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setstate__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_apply', '_backward_hooks', '_buffers', '_call_impl', '_forward_hooks', '_forward_pre_hooks', '_get_backward_hooks', '_get_name', '_is_full_backward_hook', '_is_hf_initialized', '_load_from_state_dict', '_load_state_dict_post_hooks', '_load_state_dict_pre_hooks', '_maybe_warn_non_full_backward_hook', '_modules', '_named_members', '_non_persistent_buffers_set', '_parameters', '_register_load_state_dict_pre_hook', '_register_state_dict_hook', '_replicate_for_data_parallel', '_save_to_state_dict', '_slow_forward', '_state_dict_hooks', '_version', 'add_module', 'apply', 'bfloat16', 'bos_id', 'buffers', 'children', 'classifier', 'cpu', 'cuda', 'double', 'dump_patches', 'emb_layer', 'eos_id', 'eval', 'extra_repr', 'float', 'forward', 'get_buffer', 'get_extra_state', 'get_parameter', 'get_submodule', 'half', 'ipu', 'layers', 'load_state_dict', 'modules', 'named_buffers', 'named_children', 'named_modules', 'named_parameters', 'norm', 'num_layers', 'pad_id', 'parameters', 'pos_encoding', 'register_backward_hook', 'register_buffer', 'register_forward_hook', 'register_forward_pre_hook', 'register_full_backward_hook', 'register_load_state_dict_post_hook', 'register_module', 'register_parameter', 'requires_grad_', 'set_extra_state', 'share_memory', 'state_dict', 'to', 'to_empty', 'train', 'training', 'type', 'vocab_size', 'xpu', 'zero_grad']
+2025-06-23 15:48:39,806 - conette.fix_onnx_decoder - WARNING - d_model not found in decoder, inferred from embedding: 256
+2025-06-23 15:48:39,806 - conette.fix_onnx_decoder - INFO - FixedONNXDecoderWrapper initialized:
+2025-06-23 15:48:39,806 - conette.fix_onnx_decoder - INFO -   - d_model: 256
+2025-06-23 15:48:39,806 - conette.fix_onnx_decoder - INFO -   - num_layers: 6
+2025-06-23 15:48:39,806 - conette.fix_onnx_decoder - INFO -   - vocab_size: 19788
+2025-06-23 15:48:39,817 - __main__ - INFO - Comparison with PyTorch:
+2025-06-23 15:48:39,817 - __main__ - INFO -   Max difference: 0.000003
+2025-06-23 15:48:39,817 - __main__ - INFO -   Mean difference: 0.000000
+2025-06-23 15:48:39,817 - __main__ - INFO - ✅ ONNX and PyTorch outputs match closely
+2025-06-23 15:48:39,839 - __main__ - INFO - 
+============================================================
+2025-06-23 15:48:39,839 - __main__ - INFO - RESUMEN DE EXPORTACIÓN
+2025-06-23 15:48:39,839 - __main__ - INFO - ============================================================
+2025-06-23 15:48:39,840 - __main__ - INFO - Archivo exportado: 06_models/onnx_models/conette_decoder_corrected.onnx
+2025-06-23 15:48:39,840 - __main__ - INFO - Verificación ONNX: ✅ OK
+2025-06-23 15:48:39,840 - __main__ - INFO - 
+✅ EXPORTACIÓN EXITOSA
+2025-06-23 15:48:39,840 - __main__ - INFO - El decoder corregido debería resolver el problema de repetición.
+2025-06-23 15:48:39,840 - __main__ - INFO - Usar el archivo: 06_models/onnx_models/conette_decoder_corrected.onnx
